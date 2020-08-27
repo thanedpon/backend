@@ -69,7 +69,42 @@ functions:
       - http:
           path: message/{name}
           method: get
-
+  checkAuth:
+    handler: handler.checkAuth
+    events:
+      - http:
+          path: login
+          method: post
+  getPersonalData:
+    handler: handler.getPersonalData
+    events:
+      - http:
+          path: protect
+          method: get
+  createdProfile:
+    handler: handler.createProfile
+    events:
+      - http:
+          path: createProfile
+          method: post
+  updatedData:
+    handler: handler.updatedData
+    events:
+      - http:
+          path: updateData
+          method: post
+  getDataById:
+    handler: handler.getDataById
+    events:
+      - http:
+          path: getDataById
+          method: get
+  getVehicleById:
+    handler: handler.getVehicleById
+    events:
+      - http:
+          path: vehicle/{id}
+          method: get
   getDataAll:
     handler: handler.getDataAll
     events:
